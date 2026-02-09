@@ -1,0 +1,213 @@
+/* --- 1. Importando Fontes (Gótica e Moderna) --- */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Montserrat:wght@300;400;700&display=swap');
+
+/* --- 2. Variáveis de Cores (Paleta Dark Pink) --- */
+:root {
+    --bg-dark: #050505;       /* Fundo quase preto */
+    --bg-card: #111111;       /* Fundo dos cartões */
+    --text-main: #f0f0f0;     /* Branco gelo */
+    --text-gray: #aaaaaa;     /* Cinza para textos secundários */
+    
+    --pink-neon: #ff007f;     /* Rosa Neon Principal */
+    --pink-dark: #880044;     /* Rosa Escuro */
+    --pink-glow: rgba(255, 0, 127, 0.4); /* Brilho rosa */
+}
+
+/* --- 3. Reset Geral --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: 'Montserrat', sans-serif; /* Fonte do corpo */
+    line-height: 1.6;
+}
+
+/* --- 4. Tipografia --- */
+h1, h2, h3 {
+    font-family: 'Cinzel Decorative', cursive; /* Fonte Gótica */
+    color: var(--pink-neon);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+h1 { font-size: 2.5rem; margin-bottom: 10px; }
+h2 { font-size: 2rem; margin-bottom: 20px; text-align: center; border-bottom: 1px solid var(--pink-dark); display: inline-block; padding-bottom: 5px;}
+.subtitulo { text-align: center; color: var(--text-gray); margin-bottom: 40px; }
+
+.destaque-rosa {
+    color: var(--pink-neon);
+    text-shadow: 0 0 10px var(--pink-glow);
+}
+
+/* --- 5. Header e Menu --- */
+header {
+    background-color: #000;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--pink-dark);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-family: 'Cinzel Decorative', cursive;
+    color: var(--text-main);
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-size: 0.9rem;
+    transition: 0.3s;
+    text-transform: uppercase;
+}
+
+nav a:hover {
+    color: var(--pink-neon);
+    text-shadow: 0 0 8px var(--pink-neon);
+}
+
+/* --- 6. Layout Principal --- */
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+section {
+    margin-bottom: 80px; /* Espaço entre seções */
+}
+
+/* Estilo Seção Sobre */
+.conteudo-sobre {
+    text-align: center;
+    padding: 40px;
+    background: linear-gradient(180deg, var(--bg-card) 0%, var(--bg-dark) 100%);
+    border: 1px solid var(--pink-dark);
+    border-radius: 10px;
+}
+
+.foto-redonda {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid var(--pink-neon);
+    margin-top: 20px;
+    box-shadow: 0 0 20px var(--pink-glow);
+}
+
+/* --- 7. HOBBIES (O Destaque sem Fotos) --- */
+.grid-hobbies {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsivo */
+    gap: 20px;
+}
+
+.card-hobby {
+    background-color: var(--bg-card);
+    padding: 30px;
+    border: 1px solid #333;
+    border-left: 4px solid var(--pink-dark); /* Detalhe lateral */
+    border-radius: 5px;
+    transition: all 0.4s ease; /* Animação suave */
+    cursor: default;
+}
+
+/* EFEITO DE DESTAQUE AO PASSAR O MOUSE */
+.card-hobby:hover {
+    transform: translateY(-10px); /* Sobe */
+    border-color: var(--pink-neon); /* Borda fica neon */
+    box-shadow: 0 0 25px var(--pink-glow); /* Brilho forte */
+    background-color: #1a1a1a;
+}
+
+.card-hobby h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: var(--text-main); /* Título branco */
+}
+
+.card-hobby:hover h3 {
+    color: var(--pink-neon); /* Título fica rosa no hover */
+}
+
+.card-hobby p {
+    font-size: 0.9rem;
+    color: var(--text-gray);
+}
+
+/* --- 8. Música --- */
+.container-musica {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    background-color: var(--bg-card);
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid #333;
+}
+
+.container-musica ul, .container-musica ol {
+    margin-top: 15px;
+    padding-left: 20px;
+}
+
+.container-musica li {
+    margin-bottom: 8px;
+    color: var(--text-gray);
+}
+
+.container-musica li::marker {
+    color: var(--pink-neon); /* Bolinhas/Números da lista rosa */
+}
+
+/* --- 9. Futuro --- */
+#futuro {
+    text-align: center;
+}
+
+.texto-futuro {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+blockquote {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 1.5rem;
+    color: var(--pink-neon);
+    margin-top: 40px;
+    padding: 20px;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+}
+
+/* --- 10. Footer --- */
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.8rem;
+    color: #555;
+    border-top: 1px solid #222;
+}
+
+/* --- Mobile --- */
+@media (max-width: 768px) {
+    header { flex-direction: column; gap: 15px; }
+    .container-musica { flex-direction: column; gap: 30px; }
+}
